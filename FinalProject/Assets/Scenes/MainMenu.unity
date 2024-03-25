@@ -147,6 +147,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1477410939397746198, guid: 6d9b48f042841ac4d976503348b812aa, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -732
+      objectReference: {fileID: 0}
+    - target: {fileID: 1477410939397746198, guid: 6d9b48f042841ac4d976503348b812aa, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 416
+      objectReference: {fileID: 0}
     - target: {fileID: 1545200314725106542, guid: 6d9b48f042841ac4d976503348b812aa, type: 3}
       propertyPath: m_Camera
       value: 
@@ -239,6 +247,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5846164712992221087, guid: 6d9b48f042841ac4d976503348b812aa, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -764
+      objectReference: {fileID: 0}
+    - target: {fileID: 5846164712992221087, guid: 6d9b48f042841ac4d976503348b812aa, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 261
+      objectReference: {fileID: 0}
+    - target: {fileID: 7498917952384514918, guid: 6d9b48f042841ac4d976503348b812aa, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b8978a5047ed3ed4489bb894cc2e1a62, type: 3}
     - target: {fileID: 7587678932125242931, guid: 6d9b48f042841ac4d976503348b812aa, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 

@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Ground
   - MC
+  - Bullet
+  - Destructable
   layers:
   - Default
   - TransparentFX

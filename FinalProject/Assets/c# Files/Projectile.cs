@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Projectile : MonoBehaviour
@@ -9,6 +10,8 @@ public class Projectile : MonoBehaviour
             Destroy(other.gameObject);
             Destroy(this.gameObject);
         }
+        else if(other.gameObject.tag == "Ground"){
+            Destroy(this.gameObject);
+        }
     }
-    
 }
