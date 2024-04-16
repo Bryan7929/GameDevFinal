@@ -6,62 +6,115 @@ public class PlayerInputHandler : MonoBehaviour
 {
     [SerializeField] creature playerCreature;
     ProjectileThrower projectileThrower;
+    private Animator _animator;
 
-    [SerializeField] int Max = 10;
-    [SerializeField] int Remaining = 4;
+static int x = 0;
+    [SerializeField] static int Max = 10;
+    [SerializeField] static int Remaining = 4;
 
     void Start()
     {
         projectileThrower = playerCreature.GetComponent<ProjectileThrower>();
+        _animator = GetComponent<Animator>();
+
     }
 
     //called once per frame
     void Update()
     {
+        _animator.SetBool("IsWalking", x != 1);
+
         Vector3 input = Vector3.zero;
 
-        if (Input.GetButton("Horizontal"))
-        {
+        if (Input.GetButton("Horizontal")){
             Debug.Log("Horizontal Movement Pressed");
             input.x = Input.GetAxis("Horizontal");
         }
-        if (Input.GetButtonDown("Jump"))
-        {
+        if (Input.GetButtonDown("Jump")){
             Debug.Log("Jump Button Pressed");
             playerCreature.Jump();
         }
-
         playerCreature.MoveCreature(input);
 
-        //Gun reload code
-        if (Input.GetKeyDown(KeyCode.Space))
+        //Gun reload code-----------------------------------------------------------------------------
+        if (Input.GetKeyDown(KeyCode.Space)) //Shoots primary
         { 
-            //checks for ammo and fires if there's a remaining bullet
             Debug.Log("Firing Primary");
-            if (Remaining != 0)
-            {
-                Remaining -= 1;
+            //checks Reserves b4 shooting
+            if (Remaining != 0){
                 projectileThrower.Launch(Camera.main.ScreenToWorldPoint(Input.mousePosition));
-            }
-            else if (Remaining == 0)
-            {
-                //Prints "Out of Ammo" if there's no remaining bullets
-                Debug.Log("Out of Ammo");
-            }
 
+                Remaining -= 1;
+              
+            }
+            else if (Remaining == 0){
+                //N/A ammo message
+                Debug.Log("Out of Ammo - *CLICK*");
+            }
         }
-        if (Input.GetKeyDown(KeyCode.R))
-            { 
-                // Reloads single bullet
+        if (Input.GetKeyDown(KeyCode.R)){ 
+                Chamber(); //Starts Reload
+            }
+         //Gun reload code-----------------------------------------------------------------------------
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    static void Chamber(){
                 Debug.Log("Updating Ammo");
                 Debug.Log(Remaining);
-                if(Remaining != Max)
-                {
+                // Reloads single bullet
+                if(Remaining != Max){
                 Remaining += 1;
                 }
+
                 else if(Remaining == Max){
                     Debug.Log("Max Ammo Capacity");
                 }
-            }
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+// Get the current position of the projectile thrower
+Vector3 throwerPosition = projectileThrower.transform.position;
+
+// Adjust the Y-coordinate to shoot vertically back
+throwerPosition.y += 10f; // Adjust the value as needed
+
+// Launch the projectile from the adjusted position
+projectileThrower.Launch(throwerPosition);
+*/

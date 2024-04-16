@@ -9,7 +9,6 @@ public class DeathTap : MonoBehaviour
 {
     public void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("Ouch");
         if(other.gameObject.CompareTag("MC"))
         {
             Debug.Log("Insta Death triggered");

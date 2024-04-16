@@ -9,6 +9,7 @@
         [SerializeField] int health = 69;
         [SerializeField] float speed = 0f;
         [SerializeField] float jumpForce = 10;
+        private Animator _animator;
         
         [Header("physics")]
         [SerializeField] LayerMask groundMask;
@@ -24,6 +25,7 @@
         void Start(){
             Debug.Log(health);
             rb = GetComponent<Rigidbody2D>();
+        //    _animator = GetComponent<Animator>();
         }
         
         public void MoveCreature(Vector3 direction)
@@ -52,6 +54,9 @@
         if(Physics2D.OverlapCircleAll(transform.position + new Vector3(0,jumpOffset,0), jumpRadius, groundMask).Length > 0)
         {
             rb.AddForce(Vector3.up * jumpForce, ForceMode2D.Impulse);
+            //_animator.SetBool("IsInAir", rb);
+            //_animator.SetBool("Iswalking", x != 0);
+
         }
     } 
 }
