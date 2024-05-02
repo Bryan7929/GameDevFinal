@@ -19,6 +19,7 @@ public class PlayerInputHandler : MonoBehaviour
     static int x = 0;
     [SerializeField] static int Max = 10;
     [SerializeField] static int Remaining = 4;
+    public AmmoDisplay ammoText;
 
     void Start()
     {
@@ -35,7 +36,7 @@ public class PlayerInputHandler : MonoBehaviour
     void Update()
     {
         _animator.SetBool("IsWalking", x != 1);
-
+        ammoText.ammo = Remaining;
         Vector3 input = Vector3.zero;
 
         if (Input.GetButton("Horizontal")){
@@ -49,7 +50,7 @@ public class PlayerInputHandler : MonoBehaviour
         playerCreature.MoveCreature(input);
 
         //Gun reload code-----------------------------------------------------------------------------
-        if (Input.GetKeyDown(KeyCode.Space)) //Shoots primary
+        if (Input.GetMouseButtonDown(0)) //Shoots primary| changed from firing with "spacebar" to fire with left mouse click
         { 
             Debug.Log("Firing Primary");
             //checks Reserves b4 shooting

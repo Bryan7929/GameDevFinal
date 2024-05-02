@@ -7,10 +7,10 @@ public class NewBehaviourScript : MonoBehaviour
 {
     public GameObject PausePanel;
         
-    void Update()
-    {
-        
-    }
+  public void ReturnMainMenu()
+  {
+    SceneManager.LoadScene("MainMenu");
+  }
 
     public void Pause()
     {

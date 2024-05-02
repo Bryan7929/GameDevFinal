@@ -6,6 +6,7 @@ using UnityEngine;
     {
         public float shiftAmount = 2f;
         public bool CamShiftRight = true;
+        public GameObject objectToDisable;
 
         public void OnTriggerEnter2D(Collider2D other)
         {
@@ -17,6 +18,8 @@ using UnityEngine;
             Vector3 newPosition = Camera.main.transform.position;
             newPosition.x += shiftAmount;
             Camera.main.transform.position = newPosition;
+            objectToDisable.SetActive(false);
+
             }
         }
             else if(CamShiftRight == false)
@@ -27,6 +30,7 @@ using UnityEngine;
             Vector3 newPosition = Camera.main.transform.position;
             newPosition.x -= shiftAmount;
             Camera.main.transform.position = newPosition;
+            objectToDisable.SetActive(false);
             }
         }
     }
