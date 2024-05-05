@@ -50,7 +50,7 @@ public class PlayerInputHandler : MonoBehaviour
         playerCreature.MoveCreature(input);
 
         //Gun reload code-----------------------------------------------------------------------------
-        if (Input.GetMouseButtonDown(0)) //Shoots primary| changed from firing with "spacebar" to fire with left mouse click
+        if (Input.GetMouseButtonDown(1)) //Shoots primary| changed from firing with "spacebar" to fire with left mouse click
         { 
             Debug.Log("Firing Primary");
             //checks Reserves b4 shooting
