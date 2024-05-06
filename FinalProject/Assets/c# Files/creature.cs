@@ -6,7 +6,6 @@
     public class creature : MonoBehaviour
     {
         [Header("stats")]
-        [SerializeField] int health = 69;
         [SerializeField] float speed = 0f;
         [SerializeField] float jumpForce = 10;
         private Animator _animator;
@@ -23,7 +22,6 @@
 
         // Start is called before the first frame update
         void Start(){
-            Debug.Log(health);
             rb = GetComponent<Rigidbody2D>();
         //    _animator = GetComponent<Animator>();
         }

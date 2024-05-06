@@ -1,32 +1,4 @@
-/*using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
-using TMPro;
 
-public class AmmoDisplay : MonoBehaviour
-{
-    public int ammo;
-    //public string ammoCount;
-    public bool isFiring;
-    public TMP_Text ammoDisplay;
-
-
-    // Update is called once per frame
-    void Update()
-    {
-        ammoDisplay.text = ammo.ToString();
-        if(Input.GetMouseButtonDown(0) && !isFiring && ammo > 0)
-        {
-            isFiring = true;
-            ammo--;
-            isFiring = false;
-            ammoDisplay.text = ammo.ToString();
-            ammoDisplay.SetText("");
-        }
-    }
-}
-*/
 
 using System.Collections;
 using System.Collections.Generic;
@@ -43,7 +15,7 @@ public class AmmoDisplay : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(" ammo display text: " + ammo);
+//        Debug.Log(" ammo display text: " + ammo);
 
          if (ammoDisplay != null)
         {

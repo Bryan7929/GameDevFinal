@@ -16,7 +16,7 @@ public class PlayerInputHandler : MonoBehaviour
 
     public Text textComponent; //testing UI string change
 
-    static int x = 0;
+    //static int x = 0;
     [SerializeField] static int Max = 10;
     [SerializeField] static int Remaining = 4;
     public AmmoDisplay ammoText;
@@ -35,16 +35,16 @@ public class PlayerInputHandler : MonoBehaviour
     //called once per frame
     void Update()
     {
-        _animator.SetBool("IsWalking", x != 1);
+//        _animator.SetBool("IsWalking", x != 1);
         ammoText.ammo = Remaining;
         Vector3 input = Vector3.zero;
 
         if (Input.GetButton("Horizontal")){
-            Debug.Log("Horizontal Movement Pressed");
+            //Debug.Log("Horizontal Movement Pressed");
             input.x = Input.GetAxis("Horizontal");
         }
         if (Input.GetButtonDown("Jump")){
-            Debug.Log("Jump Button Pressed");
+            //Debug.Log("Jump Button Pressed");
             playerCreature.Jump();
         }
         playerCreature.MoveCreature(input);

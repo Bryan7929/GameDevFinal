@@ -1,20 +1,4 @@
-/*using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 
-public class ProjectileThrower : MonoBehaviour
-{
-[SerializeField] GameObject ProjectilePrefab;
-[SerializeField] float speed = 4;
-
-    public void Launch(Vector3 targetPos) {
-        GameObject newProjectile = Instantiate(ProjectilePrefab,transform.position, Quaternion.identity);
-        newProjectile.transform.rotation = Quaternion.LookRotation(transform.forward, targetPos - transform.position);
-        newProjectile.GetComponent<Rigidbody2D>().velocity = newProjectile.transform.up * speed;
-        Destroy(newProjectile, 10);
-    }
-}
-*/
 
 using System.Collections;
 using System.Collections.Generic;
@@ -25,6 +9,7 @@ public class ProjectileThrower : MonoBehaviour
     [SerializeField] GameObject ProjectilePrefab;
     [SerializeField] float speed = 4;
     [SerializeField] float closerDistance = 1.5f; // Serialized field for closer distance
+    [SerializeField] float flyTime = 2;
 
     public void Launch(Vector3 targetPos)
     {
@@ -46,6 +31,6 @@ public class ProjectileThrower : MonoBehaviour
             Debug.LogWarning("Rigidbody2D component not found on the projectile!");
         }
 
-        Destroy(newProjectile, 5);
+        Destroy(newProjectile, flyTime);
     }
 }
