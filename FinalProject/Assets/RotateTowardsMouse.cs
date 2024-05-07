@@ -24,3 +24,4 @@ public class RotateTowardsMouse : MonoBehaviour
         spriteObject.transform.rotation = Quaternion.Slerp(spriteObject.transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
     }
 }
+// mmm... Slerp
