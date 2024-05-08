@@ -9,7 +9,9 @@ public class NewBehaviourScript : MonoBehaviour
         
   public void ReturnMainMenu()
   {
+    Time.timeScale = 1f;
     SceneManager.LoadScene("MainMenu");
+
   }
 
     public void Pause()
